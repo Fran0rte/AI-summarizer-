@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width-device-width, initial scale=1">
+        <link rel="stylesheet" href="style.css">
+        <title>ChatGenerate</title>
+    </head>
+    <body>
+        <div id="chat-container">
+            <ul id="chat-message"></ul>
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <script>
+            function sendMessage() {
+                var userMessage = document.getElementById('user-input').value;
+                displayMessage('user', userMessage);
+                var botMessage = getResponse(userMessage);
+                displayMessage('bot', botMessage);
+            }
+            function displayMessage(sender, message) {
+                var chatMessages = document.getElementById('chat-messages');
+                var li = document.createElement('li');
+                li.className = sender + '-message';
+                li.textContent = message;
+                chatMessages.appendChild(li);
+                document.getElementById('user-input').value='';
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>

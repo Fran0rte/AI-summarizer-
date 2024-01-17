@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html{
+    font-size:10px;
+    font-family: 'Poppins';
+}
+#chat-container {
+    max-width:400px;
+    margin:20px auto;
+    padding:10px;
+    border:1px solid black;
+    border-radius:5px;
+}
+#chat-message {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+.user-message, .bot-message {
+    margin:5px 0;
+    padding:10px;
+    border-radius:5px;
+} 
+.user-message {
+    background-color: white;
+    text-align:right;
+}
+.bot-message {
+    background-color:black;
+}
